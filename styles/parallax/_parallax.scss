@@ -1,0 +1,120 @@
+html {
+    overflow: hidden;
+}
+html.no-parallax {
+    overflow: auto;
+}
+
+/*
+* The parallax container provides the scroll bar of the website and replaces the normal scroll bar of the body.
+* If we tried to assign the parallax functionality to the body tag, this would break the "position: fixed;" elements (namely the navigation bar).
+*/
+.parallax {
+    width: 100vw;
+    height: 100vh;
+    
+    position: relative;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    
+    -webkit-perspective: 1px;
+    -moz-perspective: 1px;
+    perspective: 1px;
+    perspective-origin: 50%;
+    
+    -webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    
+    overflow-x: hidden;
+    overflow-y: auto;
+    –webkit-overflow-scrolling: touch;
+    
+    box-sizing: border-box;
+    
+    @include desktop {
+        padding-top: $topBarHeight_desktop;
+    }
+    @include tablet {
+        padding-top: topBarHeight_tablet;
+    }
+    @include phone {
+        padding-top: topBarHeight_phone;
+    }
+}
+.parallax.no-scroll {
+    @include phone {
+        overflow: hidden;
+    }
+}
+
+.parallax-content {
+    position: relative;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+    
+    transform: translateZ(0px);
+}
+
+.parallax-element {
+    overflow-x: visible;
+    overflow-y: hidden;
+    
+    position: absolute;
+    // the exact values are commented out, because of small border imprecisions (possibly due to rounding errors)
+    // by setting the width a bit wider, we go sure that the background always fills the whole width
+    left: -150vw;//-160%;
+    top: -150vh; // 50vh * (distance background to content) / (distance camera to content)
+    width: 400vw;//420%;
+    height: 150vh; // modified in parallax.js
+
+    border: 3px solid red;
+    box-sizing: border-box;
+    
+    @include transform (translateZ(-3px));
+    
+    img {
+        width: 100%;
+        height: auto;
+        
+        position: absolute;
+        left: 0;
+        top: 0;
+        
+        // The formula for calculating the y translation depending on the scale factor
+        // y translation = (scale - 1) / (2 * scale)
+        @include no-phone {
+            @include transform (scale(1.5) translate(0%, 16.67%));
+        }
+        @include phone {
+            @include transform (scale(3) translate(0%, 33.33%));
+        }
+    }
+}
+.parallax-element.hidden {
+    display: none;
+    opacity: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .parallax {
+        -webkit-transform-style: none;
+        -moz-transform-style: none;
+        transform-style: none;
+        
+        -webkit-transform-style: flat;
+        -moz-transform-style: flat;
+        transform-style: flat;
+    }
+    .parallax-element {
+        @include transform (none);
+        
+        img {
+            @include transform (translate(-50%, 0));
+        }
+    }
+}

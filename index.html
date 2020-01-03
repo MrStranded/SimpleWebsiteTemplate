@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en" th:lang="${i18n.getLocale()}">
+
+    <head>
+        <meta charset="UTF-8">
+
+        <!-- Controlling mobile scaling -->
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=0">
+        <meta name="format-detection" content="telephone=no"/> <!-- Remove Edge's automatic phone number styling -->
+        
+        <!-- Ovata Google Analytics Tag -->
+        <script ovata:marketingtags="position=Head"></script>
+        
+        <!-- Website Title -->
+        <title>Title</title>
+
+        <!-- Favicons -->
+        <link rel="apple-touch-icon" sizes="180x180"
+              href="/img/favicon/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32"
+              href="/img/favicon/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16"
+              href="/img/favicon/favicon-16x16.png">
+        
+        <!-- Meta Tags For Social Media Link Displaying -->
+        <meta property="og:title" content="Title">
+        <meta property="og:description" content="Description">
+        
+        <meta property="og:image" content="pic.jpg">
+        <meta property="og:image:type" content="image/jpeg">
+        <meta property="og:image:width" content="300">
+        <meta property="og:image:height" content="300">
+        
+        <meta property="og:url" content="url.com">
+        <meta property="og:type" content="website">
+        <meta property="og:site_name" content="Name">
+        
+        <meta name="twitter:image:alt" content="Background Image">
+        <meta name="twitter:card" content="summary_large_image">
+        
+        <!-- Including JQuery -->
+        <script src="js/lib/jquery-3.4.1.min.js"></script>
+        
+        <!-- Including Custom Style Sheet -->
+        <link rel="stylesheet" href="styles/css/style.css" type="text/css">
+        
+        <!-- Including Custom Scripts -->
+        <script src="js/parallax.js"></script>
+        <script src="js/main.js"></script>
+        
+        <!-- Including Osano Cookie Consent Style Sheet -->
+        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.css" />
+        
+        <!-- Ovata Options -->
+        <meta ovata:init='v2=true,fontawesome=false,jquery=false,inline-editable=false'>
+    </head>
+
+    <body>
+        <span id="website_language" th:text="${#locale}" style="display:none;">en</span>
+        <span id="website_default_language" th:text="${content.getNodeByPath('/').defaultLocale}" style="display:none;">en</span>
+        
+        <!-- ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: -->
+        <!-- Navigation -->
+        <header>
+            <nav id="menu" class="menu">
+                <div class="logo-container">
+                </div>
+                
+                <div id="top-bar" class="top-bar">
+                </div>
+            </nav>
+        </header>
+                
+        <!-- ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: -->
+        <!-- Parallax -->
+        <div class="parallax" id="parallax">
+            <div class="parallax-element">
+                <img src="img/parallax/icosahedron.svg" alt="Parallax background image">
+            </div>
+            <div class="parallax-content">
+                    
+                <!-- ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: -->
+                <!-- Main -->
+                <main data-ovata-area="main;desc=/templates/areas/main">
+
+                    <div style="height: 1000px; border: 5px solid green; background: transparent;">
+                        <div>Icons made by <a href="https://www.flaticon.com/authors/roundicons" title="Roundicons">Roundicons</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
+                    </div>
+
+                    <section>
+                        <div class="centered" style="background-color: pink; height: 500px;">
+                            Bloink
+                        </div>
+                        <div class="centered-slim" style="background-color: yellow; height: 200px;">
+                            Groink
+                        </div>
+                    </section>
+
+                    <div style="height: 2000px; border: 10px solid blue; box-sizing: border-box;">
+                        Test
+                    </div>
+
+                </main>
+                
+                <!-- ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: -->
+                <!-- Footer -->
+                <footer>
+                </footer>
+                
+            </div> <!-- /.parallax-content -->
+        </div> <!-- /.parallax -->
+        
+        <!-- Osano Cookie Consent https://cookieconsent.osano.com/ -->
+        <!-- Or if you want to change the style: https://cookieconsent.osano.com/download/ -->
+        <script src="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.js" data-cfasync="false"></script>
+        <script>
+        window.cookieconsent.initialise({
+          "palette": {
+            "popup": {
+              "background": "#DBECF2",
+              "text": "#004B87"
+            },
+            "button": {
+              "background": "#004B87"
+            }
+          },
+          "content": {
+            "href": ""
+          }
+        });
+        </script>
+
+    </body>
+    
+</html>

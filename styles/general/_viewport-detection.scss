@@ -1,0 +1,15 @@
+// This snippet of markup dynamically detects the viewport and writes it into the body:before pseudo element
+body::before {
+    display: none;
+    visibility: hidden;
+    
+    @include desktop {
+        content: "desktop";
+    }
+    @include tablet {
+        content: "tablet";
+    }
+    @include phone {
+        content: "phone";
+    }
+}

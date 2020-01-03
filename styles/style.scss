@@ -1,0 +1,21 @@
+// Main importer file
+
+// ----- reset predefined styles
+@import "general/reset";
+
+// ----- size and color values, mixin functions
+@import "general/constants";
+@import "general/colors";
+@import "general/mixins";
+
+// ----- detecting currently active viewport
+@import "general/viewport-detection";
+
+// ----- global styles
+@import "general/global";
+@import "general/sections";
+
+// ----- parallax element styling
+@import "parallax/parallax";
+
+// ----- website components

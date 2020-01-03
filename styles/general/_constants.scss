@@ -1,0 +1,20 @@
+// breakpoints
+$screenWidthMax_tiny: 414px;
+$screenWidthMax_phone: 767px;
+$screenWidthMin_tablet: 768px;
+$screenWidthMax_tablet: 1199px;
+$screenWidthMin_desktop: 1200px;
+
+// center width
+$centeredFull_phone: 100%;
+$centeredFull_tablet: 680px;
+$centeredFull_desktop: 1024px;
+
+$centeredSlim_phone: 90%;
+$centeredSlim_tablet: 650px;
+$centeredSlim_desktop: 800px;
+
+// height of navigation. ! Has to be applied in parallax.js !
+$topBarHeight_phone: 50px;
+$topBarHeight_tablet: 75px;
+$topBarHeight_desktop: 100px;

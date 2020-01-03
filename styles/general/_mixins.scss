@@ -1,0 +1,56 @@
+@mixin tiny {
+    @media (max-width: #{$screenWidthMax_tiny}) {
+        @content;
+    }
+}
+
+@mixin phone {
+    @media (max-width: #{$screenWidthMax_phone}) {
+        @content;
+    }
+}
+
+@mixin tablet {
+    @media (min-width: #{$screenWidthMin_tablet}) and (max-width: #{$screenWidthMax_tablet}) {
+        @content;
+    }
+}
+
+@mixin desktop {
+    @media (min-width: #{$screenWidthMin_desktop}) {
+        @content;
+    }
+}
+
+@mixin no-phone {
+    @media (min-width: #{$screenWidthMin_tablet}) {
+        @content;
+    }
+}
+
+/* Usage: 
+
+@include phone {
+    padding: 0 20px;
+}
+*/
+
+@mixin order ($order) {
+    -webkit-box-ordinal-group: $order;
+    -moz-box-ordinal-group: $order;
+    -ms-flex-order: $order;
+    -webkit-order: $order;
+    order: $order;
+}
+
+@mixin transform($transformation) {
+    -webkit-transform: $transformation;
+    -moz-transform: $transformation;
+    -ms-transform: $transformation;
+    transform: $transformation;
+}
+
+/* Usage:
+
+@include order(5);
+*/

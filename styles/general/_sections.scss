@@ -1,0 +1,44 @@
+section {
+    position: relative;
+    width: 100%;
+
+    .centered, .centered-full {
+        margin: 0 auto;
+
+        @include desktop {
+            max-width: $centeredFull_desktop;
+        }
+        @include tablet {
+            max-width: $centeredFull_tablet;
+        }
+        @include phone {
+            max-width: $centeredFull_phone;
+        }
+    }
+
+    .centered-slim {
+        margin: 0 auto;
+
+        @include desktop {
+            max-width: $centeredSlim_desktop;
+        }
+        @include tablet {
+            max-width: $centeredSlim_tablet;
+        }
+        @include phone {
+            max-width: $centeredSlim_phone;
+        }
+    }
+}
+
+@mixin sectionMargin {
+    @include desktop {
+        padding-bottom: 100px;
+    }
+    @include tablet {
+        padding-bottom: 75px;
+    }
+    @include phone {
+        padding-bottom: 50px;
+    }
+}
