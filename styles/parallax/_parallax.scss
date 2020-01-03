@@ -84,15 +84,6 @@ html.no-parallax {
         position: absolute;
         left: 0;
         top: 0;
-        
-        // The formula for calculating the y translation depending on the scale factor
-        // y translation = (scale - 1) / (2 * scale)
-        @include no-phone {
-            @include transform (scale(1.5) translate(0%, 16.67%));
-        }
-        @include phone {
-            @include transform (scale(3) translate(0%, 33.33%));
-        }
     }
 }
 .parallax-element.hidden {
@@ -112,9 +103,5 @@ html.no-parallax {
     }
     .parallax-element {
         @include transform (none);
-        
-        img {
-            @include transform (translate(-50%, 0));
-        }
     }
 }
